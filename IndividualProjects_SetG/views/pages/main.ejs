@@ -3,8 +3,10 @@
 <%- include ('../partials/message') %>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_itunes-512.png">
 
-<form>
+
+<form action="/" method="post">
     <div class="mb-3">
         <input type="text" class="form-control" id="search" placeholder="Search" style="text-align:center">
         <!--Search Bar-->
@@ -15,8 +17,32 @@
     </div>
 </form>
 
-<div>
+<% if (results) { %>
+<div style="margin-top:50px;">
     <!--To Do: Add JavaScript to make a card and populate it with search results-->
+    <center>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <% if (url == ""){ %>
+                <h5 class="card-title"> <%= name %> </h5>
+                <% } %>
+                <!--If search query doesn't return anything, we render with name: "Sorry, No Results Found"-->
+
+                <% if (image != ""){ %>
+                <img src="<%=image %>" class="card-img-top" alt="Image" style="width:100px; height=100px;">
+                <% } %>
+                <!--This is separate because the image url might still be missing, but the rest of the stuff can be displayed-->
+
+                <% if (url != ""){ %>
+                <h5 class="card-title"> Name: <%= name %> </h5>
+                <h6 class="card-subtitle mb-2 text-muted">Genre: <%= genre %></h6>
+                <p class="card-text"> Release Date: <%= release_date %> </p>
+                <a href="<%= url %>" class="card-link">Click here to view.</a>
+                <% } %>
+            </div>
+        </div>
+    </center>
 </div>
+<% } %>
 
 <%- include ('../partials/footer') %>
