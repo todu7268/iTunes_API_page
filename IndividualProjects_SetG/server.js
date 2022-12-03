@@ -65,10 +65,8 @@ app.post('/', (req, res) => {
             console.log(error);
             res.render('pages/main', {
                 //if there's an error, so the api doesn't return anything
-                results: true,
-                name: "Sorry, No Results Found",
-                url: "",
-                image:""
+                results: false,
+                message: "No results found."
             });
         })
 });

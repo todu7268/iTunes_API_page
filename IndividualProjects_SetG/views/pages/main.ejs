@@ -21,10 +21,6 @@
     <center>
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-                <% if (url == ""){ %>
-                <h5 class="card-title"> <%= name %> </h5>
-                <% } %>
-                <!--If search query doesn't return anything, we render with name: "Sorry, No Results Found"-->
                 <% if (image != ""){ %>
                 <img src="<%=image %>" class="card-img-top" alt="Image" style="width:100px; height=100px;">
                 <% } %>
