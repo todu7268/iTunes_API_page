@@ -34,14 +34,13 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-
-    /*const helpVar = `search?term=${$1}&media=music&limit=1`
+    
+    const helpVar = `search?term=${req.body.search}&media=music&limit=1`
     const helpVar1 = `https://itunes.apple.com/`
-    const helpURL = helpVar + helpVar1; */
-    //Haven't begun working on the link yet.
+    const helpURL = helpVar1 + helpVar;
 
     axios({
-        url: `https://itunes.apple.com/search?term=rihanna&media=music&limit=1 `, //testing with Rihanna.
+        url: helpURL, 
         method: 'GET',
         dataType: 'json',
     })
