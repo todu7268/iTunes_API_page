@@ -21,16 +21,11 @@
     <center>
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-                <% if (image != ""){ %>
                 <img src="<%=image %>" class="card-img-top" alt="Image" style="width:100px; height=100px;">
-                <% } %>
-                <!--This is separate because the image url might still be missing, but the rest of the stuff can be displayed-->
-                <% if (url != ""){ %>
                 <h5 class="card-title"> Name: <%= name %> </h5>
                 <h6 class="card-subtitle mb-2 text-muted">Genre: <%= genre %></h6>
                 <p class="card-text"> Release Date: <%= release_date %> </p>
                 <a class="btn btn-primary" href="<%= url %>"> <i class="fa fa-external-link"></i> </a>
-                <% } %>
             </div>
         </div>
     </center>
