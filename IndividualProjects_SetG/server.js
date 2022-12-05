@@ -49,7 +49,6 @@ app.post('/', (req, res) => {
         dataType: 'json',
     })
         .then(result => {
-            console.log(result.data.results[0]);
             res.render('pages/main', {
                 // if something is found and returned by the api
                 results: true,
@@ -62,7 +61,6 @@ app.post('/', (req, res) => {
         })
 
         .catch(error => {
-            console.log(error);
             res.render('pages/main', {
                 //if there's an error, so the api doesn't return anything
                 results: false,
