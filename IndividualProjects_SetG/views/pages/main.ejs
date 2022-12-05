@@ -21,11 +21,41 @@
     <center>
         <div class="card" style="width: 18rem;">
             <div class="card-body">
+
+                <!--Information from the API, display in a Card-->
                 <img src="<%=image %>" class="card-img-top" alt="Image" style="width:100px; height=100px;">
                 <h5 class="card-title"> Name: <%= name %> </h5>
+
+                <!--Genre isn't ""-->
+                <% if(genre != ""){ %>
                 <h6 class="card-subtitle mb-2 text-muted">Genre: <%= genre %></h6>
+                <% } %>
+
+                <!--Genre is "", doesn't exist-->
+                <% if (genre == ""){ %>
+                <h6 class="card-subtitle mb-2 text-muted">-</h6>
+                <% } %>
+
+                <!--Release date isn't ""-->
+                <% if (release_date != "") { %>
                 <p class="card-text"> Release Date: <%= release_date %> </p>
+                <% } %>
+
+                <!--Release date is ""-->
+                <% if (release_date == ""){ %>
+                <p class="card-text">-</p>
+                <% } %>
+
+                <!--URL isn't ""-->
+                <% if (url != ""){ %>
                 <a class="btn btn-primary" href="<%= url %>"> <i class="fa fa-external-link"></i> </a>
+                <% } %>
+
+                <!--URL is "", link unavailable, just disable the button-->
+                <% if (url == "") { %>
+                <button type="button" class="btn btn-primary" disabled> <i class="fa fa-external-link"></i> </button>
+                <% } %>
+
             </div>
         </div>
     </center>
